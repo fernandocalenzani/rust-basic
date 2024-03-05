@@ -1,0 +1,1 @@
+/home/fernando/Desktop/software-engineer/software/rust/9_structs_ttructure_data/target/debug/structs_ttructure_data: /home/fernando/Desktop/software-engineer/software/rust/9_structs_ttructure_data/src/main.rs
