@@ -12,7 +12,7 @@
 - [Control Flow](6_control_flow)
 - [Loops](7_loops)
 - [Ownership](8_ownership)
-- [Structures](9_structs_ttructure_datahip)
+- [Structures](9_structs_data)
 
 # Rust
 
