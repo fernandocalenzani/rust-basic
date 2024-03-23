@@ -11,4 +11,6 @@
 - [Loops](7_loops/theory.md)
 - [Ownership](8_ownership/theory.md)
 - [Structures](9_structs_data/theory.md)
-- [Enum and Pattern](10_enum_patterns/theory.md)
+- [Modules and Libraries](10_packages_crates_modules/theory.md)
+- [Collections](11_collections/theory.md)
+- [Error Handling](12_error_handling/theory.md)
