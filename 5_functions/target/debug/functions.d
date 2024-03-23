@@ -1,1 +1,1 @@
-/home/fernando/Desktop/software-engineer/software/rust/functions/target/debug/functions: /home/fernando/Desktop/software-engineer/software/rust/functions/src/main.rs
+/home/fernando/Desktop/software-engineer/software/rust/5_functions/target/debug/functions: /home/fernando/Desktop/software-engineer/software/rust/5_functions/src/main.rs

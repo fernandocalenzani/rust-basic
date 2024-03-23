@@ -1,36 +1,21 @@
-# Functions
+# Rust Functions
 
-- Statements are instructions that perform some action and do not return a value.
-- Expressions evaluate to a resultant value. Let’s look at some examples.
+Functions in Rust provide a way to organize code into reusable and modular components. This markdown document provides an overview of defining and using functions in Rust.
 
-- Statements:
+## 1. Function Definition
 
-```
-fn main() {
-    let y = {
-        let x = 3;
-        x + 1
-    };
+### 1.1 Basic Syntax
 
-    println!("The value of y is: {y}");
+Functions are defined using the `fn` keyword, followed by the function name, parameters, return type, and a block of code.
+
+**Example:**
+
+```rust
+fn nome_da_funcao(parametro1: Tipo1, ..., parametroN: TipoN) -> TipoDeRetorno {
+    // Corpo da função
 }
-
-output> The value of y is: 4
 ```
 
-- Expressions:
+# Examples:
 
-```
-fn five() -> i32 {
-    5
-}
-
-fn main() {
-    let x = five();
-
-    println!("The value of x is: {x}");
-}
-
-output> The value of y is: 5
-
-```
+- [Example](src/main.rs)

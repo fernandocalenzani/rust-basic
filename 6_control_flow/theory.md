@@ -1,25 +1,19 @@
 # Control Flow
 
+In Rust, you can use the control structure if, else if, and else to control the flow of the program based on boolean conditions. Here's the basic syntax:
+
 - if-else
+- Matches
 
-```
-fn main() {
-    let number = 3;
-
-    if number < 5 {
-        println!("condition was true");
-    } else {
-        println!("condition was false");
-    }
+```rust
+let third: Option<&i32> = v.get(2);
+match third {
+    Some(third) => println!("The third element is {third}"),
+    None => println!("There is no third element."),
 }
-```
 
 ```
-fn main() {
-    let condition = true;
 
-    let number = if condition { 5 } else { "six" };
+# Examples:
 
-    println!("The value of number is: {number}");
-}
-```
+- [Example](src/main.rs)

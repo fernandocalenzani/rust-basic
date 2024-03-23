@@ -1,131 +1,114 @@
-# Variables and Mutability
+# Rust Data Types
 
-- for standard, the variables in Rust are immutable
+Rust is a statically-typed language with a strong focus on memory safety and performance. This markdown document provides an overview of various data types in Rust.
+
+## 1. Scalar Types
+
+### 1.1 Integer Types
+
+Rust supports a range of integer types, both signed and unsigned.
+
+- `i8`, `i16`, `i32`, `i64`, `i128`: Signed integers.
+- `u8`, `u16`, `u32`, `u64`, `u128`: Unsigned integers.
+- `isize`, `usize`: Integer types that depend on the architecture.
+
+### 1.2 Floating-Point Types
+
+Rust has two floating-point types.
+
+- `f32`: 32-bit floating point.
+- `f64`: 64-bit floating point.
+
+### 1.3 Booleans
+
+- `bool`: Represents boolean values (`true` or `false`).
+
+### 1.4 Characters
+
+- `char`: Represents a single Unicode character.
+
+## 2. Compound Types
+
+### 2.1 Tuples
+
+Tuples are ordered lists of fixed-size elements.
+
+Example:
+
+```rust
+let my_tuple: (i32, f64, char) = (42, 3.14, 'a');
+```
+
+### 2.2 Arrays
+
+Arrays have a fixed size and contain elements of the same type.
+
+Example:
+
+```rust
+let my_array: [i32; 5] = [1, 2, 3, 4, 5];
+```
+
+References
+
+## 3. Ownership and Borrowing
+
+### 3.1 References
+
+References allow borrowing values without taking ownership.
+
+Example:
+
+```rust
+let x = 42;
+let reference_to_x = &x;
+```
+
+### 3.1 Strings
+
+Rust has two main string types.
+
+String: A growable, heap-allocated string.
+&str: A string slice, a reference to a sequence of UTF-8 bytes.
+
+Example:
+
+```rust
+let my_string = String::from("Hello, Rust!");
+let my_str_slice: &str = "Hello, Rust!";
+```
+
+## 4. Additional Types
+
+### 4.1 Option
+
+The Option enum represents either a value (Some) or no value (None).
+
+Example:
+
+```rust
+let maybe_value: Option<i32> = Some(42);
+let no_value: Option<i32> = None;
 
 ```
-fn main() {
-    let x = 5; // immutable variable
 
-    println!("The value of x is: {x}");
-    x = 6; // error message: the variable is immutable
-    println!("The value of x is: {x}");
-}
-```
+### 3.1 Result
 
-- declaring mutable variables
+The Result enum represents either success (Ok) or an error (Err).
 
-```
-fn main() {
-    let mut x = 5; // mutable variable
+Example:
 
-    println!("The value of x is: {x}");
-    x = 6;
-    println!("The value of x is: {x}");
-}
-```
-
-- constants: First, you aren’t allowed to use mut with constants. Constants aren’t just immutable by default—they’re always immutable. You declare constants using the const keyword instead of the let keyword, and the type of the value must be annotated. We’ll cover types and type annotations in the next section, “Data Types”, so don’t worry about the details right now. Just know that you must always annotate the type.
-
-- Shadowing
-
-```
-fn main() {
-    let x = 5;
-
-    let x = x + 1;
-
-    {
-        let x = x * 2;
-        println!("The value of x in the inner scope is: {x}");
+```rust
+fn divide(x: f64, y: f64) -> Result<f64, &'static str> {
+    if y == 0.0 {
+        Err("Cannot divide by zero.")
+    } else {
+        Ok(x / y)
     }
-
-    println!("The value of x is: {x}");
 }
 
-Output:
-The value of x in the inner scope is: 12
-The value of x is: 6
 ```
 
-# Data Types
+# Examples:
 
-- Every value in Rust is of a certain data type, which tells Rust what kind of data is being specified so it knows how to work with that data.
-
-- Integer Types:
-
-```
-Length	Signed	Unsigned
-8-bit	i8	    u8
-16-bit	i16	    u16
-32-bit	i32	    u32
-64-bit	i64	    u64
-128-bit	i128	u128
-arch	isize	usize
-```
-
-- Integer Literals in Rust:
-
-```
-Number literals	Example
-Decimal	        98_222
-Hex	            0xff
-Octal	        0o77
-Binary	        0b1111_0000
-Byte(u8 only)	b'A'
-```
-
-- Examples:
-
-```
-fn main() {
-    let x = 2.0; // f64
-
-    let y: f32 = 3.0; // f32
-}
-```
-
-- Numerical operations:
-
-```
-fn main() {
-    // addition
-    let sum = 5 + 10;
-
-    // subtraction
-    let difference = 95.5 - 4.3;
-
-    // multiplication
-    let product = 4 * 30;
-
-    // division
-    let quotient = 56.7 / 32.2;
-    let truncated = -5 / 3; // Results in -1
-
-    // remainder
-    let remainder = 43 % 5;
-}
-```
-
-- Boolean: `let f: bool = false;`
-- Array Type: `let a: [i32; 5] = [1, 2, 3, 4, 5]; a[1]`
-- Array Touple:
-
-```
-fn main() {
-    let x: (i32, f64, u8) = (500, 6.4, 1);
-
-    let five_hundred = x.0;
-
-    let six_point_four = x.1;
-
-    let one = x.2;
-}
-```
-
-- The Character Type:
-
-```
-    let c = 'z';
-    let z: char = 'ℤ'; // with explicit type annotation
-    let heart_eyed_cat = '😻';
-```
+- [Example](src/main.rs)

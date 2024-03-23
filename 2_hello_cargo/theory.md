@@ -1,21 +1,16 @@
-# Hello Cargo
+# GET STARTED
 
-```
+## Summary
+
+- Commands to create your first project:
+
+```bash
 cargo new hello_cargo
-
-cd /project
-
+cd hello_cargo
 cargo build
-
 cargo run
-
-cargo check
 ```
 
-Cargo will create a new project named 'hello_cargo'.
+# Examples:
 
-|- project_name/
-| |-- src/
-| | |-- main.rs
-| |-- .gitignore
-| |-- Cargo.toml
+- [Example](src/main.rs)
